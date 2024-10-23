@@ -1,4 +1,4 @@
-import { Controller, Post, Body } from '@nestjs/common';
+import { Controller, Post, Body, Get } from '@nestjs/common';
 import { EmailService } from './email.service';
 
 @Controller('email')
@@ -13,5 +13,10 @@ export class EmailController {
     @Body('context') context: any,
   ) {
     return this.emailService.sendEmail(to, subject, templateName, context);
+  }
+
+  @Get()
+  async saludo(){
+    return this.emailService.saludos()
   }
 }

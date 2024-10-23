@@ -17,4 +17,8 @@ export class EmailService {
       context, 
     });
   }
+
+  async saludos(){
+    return "Saludos"
+  }
 }
